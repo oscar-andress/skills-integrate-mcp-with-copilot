@@ -16,12 +16,45 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.teacher-session {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1;
+}
+
+.teacher-session button {
+  padding: 8px 12px;
+}
+
+.login-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: min(300px, calc(100vw - 40px));
+  padding: 18px;
+  border-radius: 5px;
+  background: white;
+  color: #333;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-panel h3 {
+  margin-bottom: 15px;
+  color: #1a237e;
 }
 
 header h1 {
@@ -111,18 +144,14 @@ section h3 {
 }
 
 .delete-btn {
-  background: none;
-  border: none;
-  color: #c62828;
+  background-color: #c62828;
   cursor: pointer;
-  font-size: 14px;
-  padding: 2px 5px;
-  transition: all 0.2s;
-  border-radius: 3px;
+  font-size: 13px;
+  padding: 5px 8px;
 }
 
 .delete-btn:hover {
-  background-color: #ffebee;
+  background-color: #8e0000;
 }
 
 .participants-section p {
@@ -192,9 +221,29 @@ button:hover {
   display: none;
 }
 
+#message {
+  width: 100%;
+  max-width: 500px;
+}
+
 footer {
   text-align: center;
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding-top: 64px;
+  }
+
+  .teacher-session {
+    top: 10px;
+    right: 10px;
+  }
+
+  #teacher-status {
+    font-size: 12px;
+  }
 }
